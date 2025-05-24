@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-deep-black text-off-white font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  }
+  
+  .btn {
+    @apply px-6 py-2 font-medium transition-all duration-300 border rounded-sm;
+  }
+  
+  .btn-primary {
+    @apply border-gold text-gold hover:bg-gold hover:text-deep-black;
+  }
+  
+  .nav-link {
+    @apply relative px-2 py-1 text-off-white transition-all duration-300 hover:text-gold;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif font-medium mb-8 text-white;
+  }
+  
+  .section-subtitle {
+    @apply text-xl md:text-2xl font-serif italic mb-6 text-gold;
+  }
+  
+  .gold-accent {
+    @apply inline-block w-20 h-px bg-gold mx-2;
+  }
+  
+  .gallery-item {
+    @apply overflow-hidden relative cursor-pointer;
+  }
+  
+  .gallery-item-info {
+    @apply absolute inset-0 bg-gradient-to-t from-deep-black/90 to-transparent 
+      opacity-0 group-hover:opacity-100 transition-opacity duration-300
+      flex flex-col justify-end p-6;
+  }
+}
